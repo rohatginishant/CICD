@@ -1,0 +1,25 @@
+---
+Parameters:
+  SGDescription:
+    Description: It is a description of a security Group which is changeable by the user.
+    Type: String
+
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-02f3f602d23f1659d
+      AvailabilityZone: us-east-1a
+      InstanceType: t2.micro
+      SecurityGroups:
+        - !Ref SecurityGroupAll
+
+  SecurityGroupAll:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: !Ref SGDescription
+      GroupName: SG-1-Cloudformation
+      SecurityGroupIngress:
+        - CidrIp: 0.0.0.0/0
+          IpProtocol: "-1"
+
