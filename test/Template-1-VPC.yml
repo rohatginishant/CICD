@@ -1,7 +1,7 @@
 ---
 Parameters:
   SGDescription:
-    Description: It is a description of a security Group which is changeable by the user.
+    Description: It is a  new description of a security Group which is changeable by the user.
     Type: String
 
 Resources:
